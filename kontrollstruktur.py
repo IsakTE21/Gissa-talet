@@ -1,13 +1,15 @@
 import random
 generate = random.randint(1, 100)
 
-gissning = input("Gissa talet mellan 1-100")
+gissning = input("Gissa talet mellan 1-100: ")
 rätt = False
 while not rätt:
-        gissning = input("Gissa talet mellan 1-100")
-while generate == gissning:
-        print("Du gissade rätt, bra jobbat")
+    if int(gissning) == generate:
+        print("Du gissade rätt, bra jobbat!")
         rätt = True
-        
-while rätt:
-        print("You lost, please try again.")
+    elif int(gissning) < generate:
+        print("För lågt")
+        gissning = input("Gissa talet mellan 1-100: ")
+    elif int(gissning) > generate:
+        print("För högt")
+        gissning = input("Gissa talet mellan 1-100: ")
